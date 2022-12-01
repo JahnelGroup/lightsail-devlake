@@ -18,11 +18,11 @@ chmod +x /usr/local/bin/docker-compose
 # if you change this, change the systemd service file to match
 # WorkingDirectory=[whatever you have below]
 mkdir /srv/docker
-curl -o /srv/docker/docker-compose.yml https://raw.githubusercontent.com/jahnelgroup/lightsail-tools/main/devlake/docker-compose.yml
+curl -o /srv/docker/docker-compose.yml https://raw.githubusercontent.com/jahnelgroup/lightsail-devlake/main/docker-compose.yml
 
 # copy in systemd unit file and register it so our compose file runs 
 # on system restart
-curl -o /etc/systemd/system/docker-compose-app.service https://raw.githubusercontent.com/jahnelgroup/lightsail-tools/main/devlake/docker-compose-app.service
+curl -o /etc/systemd/system/docker-compose-app.service https://raw.githubusercontent.com/jahnelgroup/lightsail-devlake/main/docker-compose-app.service
 systemctl enable docker-compose-app
 
 # start up the application via docker-compose
