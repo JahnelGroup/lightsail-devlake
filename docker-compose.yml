@@ -32,7 +32,7 @@ services:
   devlake:
     image: apache/devlake:v0.14.2
     ports:
-      - 127.0.0.1:8080:8080
+      - 0.0.0.0:8080:8080
     restart: always
     volumes:
       - ./.env:/app/.env
@@ -45,7 +45,7 @@ services:
   config-ui:
     image: apache/devlake-config-ui:v0.14.2
     ports:
-      - 127.0.0.1:4000:4000
+      - 0.0.0.0:4000:4000
     env_file:
       - ./.env
     environment:
