@@ -2,8 +2,6 @@
 
 set -e
 
-apt-get install -y curl
-
 # install latest version of docker the lazy way
 curl -sSL https://get.docker.com | sh
 
@@ -18,7 +16,7 @@ chmod +x /usr/local/bin/docker-compose
 # if you change this, change the systemd service file to match
 # WorkingDirectory=[whatever you have below]
 mkdir /srv/docker
-curl -o /srv/docker/docker-compose.yml https://raw.githubusercontent.com/jahnelgroup/lightsail-devlake/main/docker-compose.yml
+curl -o /srv/docker/docker-compose.yml https://raw.githubusercontent.com/jahnelgroup/lightsail-devlake/main/docker-compose.ymlcurl
 
 # copy in systemd unit file and register it so our compose file runs 
 # on system restart
